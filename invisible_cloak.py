@@ -11,15 +11,8 @@ while cap.isOpened():
     if ret:
         # how do we convert rgb to hsv?
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-        # cv2.imshow("hsv", hsv)
-        # how to get hsv value?
-        # lower: hue - 10, 100, 100, higher: h+10, 255, 255
         red = np.uint8([[[0,255,0]]]) # bgr value of red
         hsv_red = cv2.cvtColor(red, cv2.COLOR_BGR2HSV)
-        # get hsv value of red from bgr
-        # print(hsv_red)
-
-        # threshold the hsv value to get only red colors
         l_red = np.array([36, 0, 0])
         u_red = np.array([86, 255, 255])
 
